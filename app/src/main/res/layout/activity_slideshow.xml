@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SlideshowActivity">
+
+    <!-- ImageView adds background image block on to activity 1] id=bg1  2] src=block
+    -->
+    <ImageView
+        android:id="@+id/bg1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/block"
+        android:scaleType="centerCrop"/>
+
+    <!-- Textview for welcome learner  1] id=txt1 -->
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Welcome Learner"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <!--Button 3: Move to DemoActivity 1] id=btn1 2] onclick =go_to_demo
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="780dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:text="Click here"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:onClick="go_to_demo"
+            ></Button>
+            -->
+
+</FrameLayout>

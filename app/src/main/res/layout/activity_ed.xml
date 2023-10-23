@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ciphershield.">
+
+    <!--ImageView for whole activity-->
+    <ImageView
+        android:id="@+id/bg3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <!-- Btn1==btn_switch
+        Button :To switch algorithms
+        1] id=btn_switch
+        2] onClick =encryptButtonClick()
+        3] btn_shape.xml
+        -->
+    <Button
+        android:id="@+id/btn_switch"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/black"
+        android:onClick="encryptionButtonClick"
+        android:text="@string/advanced_encryption_standard"
+        android:textColor="#E3E2DD"
+        android:textSize="15sp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Btn2 and btn3 ==btn_encrypt,btn_decrypt
+         Linear layout contain encrypt and decrypt button
+         1] id=btn_encrypt ,btn_decrypt
+         2] onClick =encryptButtonClick()
+         3] btn_shape.xml
+         4] string :Encrypt ,Decrypt
+         android:onClick="encryptionButtonClick"
+         android:onClick="encryptionButtonClick"
+    -->
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_key">
+
+        <Button
+            android:id="@+id/btn_encrypt"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/black"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/encrypt"
+            android:textSize="15sp"
+            android:layout_marginEnd="10dp" />
+
+        <Button
+            android:id="@+id/btn_decrypt"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/black"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/decrypt"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"/>
+
+    </LinearLayout>
+
+
+    <!--   Btn4 and btn5 ==btn_copy,btn_reset
+            For reset and copy
+           android:onClick="encryptionButtonClick"
+            android:onClick="encryptionButtonClick"
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ans"
+        android:layout_marginBottom="30dp"
+        >
+
+        <Button
+            android:id="@+id/btn_copy"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#070707"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/copy"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/reset"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <!--Edit view =edit_input
+         For input-->
+    <EditText
+        android:id="@+id/edit_input"
+        android:layout_width="270dp"
+        android:layout_height="160dp"
+        android:background="@drawable/view_background"
+        android:gravity="center"
+        android:hint="@string/enter_your_message_here"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_switch"
+        android:autofillHints="" />
+
+
+
+    <!--Edit view =edit_key
+        For input-->
+    <EditText
+        android:id="@+id/edit_key"
+        android:layout_width="270dp"
+        android:layout_height="66dp"
+        android:background="@drawable/view_background"
+        android:gravity="center"
+        android:hint="@string/key"
+        android:maxLength="30"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_input"
+        android:autofillHints="" />
+
+
+
+    <!--Text view =text_ans
+        For input-->
+    <TextView
+        android:id="@+id/text_ans"
+        android:layout_width="270dp"
+        android:layout_height="160dp"
+        android:background="@drawable/view_background"
+        android:gravity="center"
+        android:hint="@string/your_output_gonna_be_here"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout1"
+        tools:ignore="TextViewEdits" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
